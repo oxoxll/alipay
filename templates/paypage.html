@@ -6,11 +6,30 @@
     <title>Alipay Api - PayPage</title>
 </head>
 <body>
+	{% if message %}
+	{{message}}
+	{% endif %}
 
+<br/>
+<br/>
+<br/>
     {{payhtml|safe}}
 
-    <script>
-    </script>
+
+<script type="text/javascript">
+function show_confirm()
+{
+var r=confirm("Press a button!");
+if (r==true)
+  {
+  alert("Success!");
+  }
+else
+  {
+  alert("Fail!");
+  }
+}
+</script>
 
 </body>
 </html>

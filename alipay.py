@@ -8,7 +8,6 @@ import urllib2
 
 # The verfy request link:
 # https://mapi.alipay.com/gateway.do?partner=合作者 身份 ID&notify_id=通知 ID 的值
-
 verfyURL={
     # "https":"https://www.alipay.com/cooperate/gateway.do?service=notify_verify",  #out of date
     # "http" :"http://notify.alipay.com/trade/notify_query.do?",                    #out of date

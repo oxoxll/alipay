@@ -17,7 +17,7 @@ alipayTool=alipay.alipay(
                 key="vwggdo5pdtbk3adqm8p2n23z6ijpjiek",
                 sellermail="admin@shopqi.com",
                 notifyurl="http://115.29.170.111:5000/notify_page",
-                returnurl="/return_page",
+                returnurl="http://115.29.170.111:5000/return_page",
                 showurl="/"  
             )  
 
@@ -53,7 +53,8 @@ def paypage():
 def notify_page():
 	rlt=alipayTool.notifiyCall(f,verify=True)
 	if rlt=='success':  
-   		paySuccess(f['out_trade_no'])  
+   		# refresh browser here 
+   		paySuccess(f['out_trade_no'])
    	return rlt
 
 #returnurl notice
@@ -61,6 +62,7 @@ def notify_page():
 def return_page():
 	rlt=alipayTool.notifiyCall(f,verify=True)
 	if rlt=='success':  
+		# refresh browser here 
    		paySuccess(f['out_trade_no'])  
     	return render_template('return_page.html',{'rlt':rlt})
 	return render_template('return_page.html',{'rlt':rlt})
